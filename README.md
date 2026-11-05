@@ -1,6 +1,6 @@
 # Duality Geometry of Linear and Kernel Support Vector Machines
 
-ED401 Advanced Analysis, Project 1. Data: UCI Banknote Authentication.
+Data: UCI Banknote Authentication.
 
 > **Central question.** How do continuous duality, separating functionals,
 > Lagrange duality and RKHS representation explain the geometry and sparsity
