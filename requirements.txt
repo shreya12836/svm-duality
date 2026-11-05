@@ -1,0 +1,13 @@
+# Python >= 3.11
+numpy>=2.0
+scipy>=1.14
+pandas>=2.2
+scikit-learn>=1.5
+cvxpy>=1.5
+clarabel>=0.9
+matplotlib>=3.9
+pyyaml>=6.0
+psutil>=6.0
+# development
+pytest>=8.0
+pytest-cov>=5.0

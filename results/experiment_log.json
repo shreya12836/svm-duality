@@ -1,0 +1,214 @@
+{
+  "started_utc": "2026-11-05T21:32:42+00:00",
+  "finished_utc": "2026-11-05T21:33:16+00:00",
+  "seed": 42,
+  "config": {
+    "seed": 42,
+    "output_dir": "C:/Users/BIT/Desktop/aa/svm-duality/results",
+    "data": {
+      "path": "C:/Users/BIT/Desktop/aa/svm-duality/data/raw/banknote_authentication.csv",
+      "sha256": "d0539aaed2139ba7a587b3e34fb345ce503ff7d5d33dbf9912d8e195ce425cb9",
+      "features": [
+        "variance",
+        "skewness",
+        "curtosis",
+        "entropy"
+      ],
+      "val_fraction": 0.2,
+      "test_fraction": 0.2
+    },
+    "selection": {
+      "C_grid": [
+        0.01,
+        0.03,
+        0.1,
+        0.3,
+        1.0,
+        3.0,
+        10.0,
+        30.0,
+        100.0,
+        300.0,
+        1000.0
+      ],
+      "gamma_grid": [
+        0.01,
+        0.03,
+        0.1,
+        0.3,
+        1.0,
+        3.0,
+        10.0
+      ],
+      "linear_C": null,
+      "rbf_C": null,
+      "rbf_gamma": null
+    },
+    "solvers": {
+      "cvx_solver": "CLARABEL",
+      "smo_tol": 1e-05,
+      "smo_max_iter": 300000,
+      "pegasos_epochs": 50,
+      "pegasos_seeds": 5,
+      "timing_repeats": 3
+    },
+    "plots": {
+      "features": [
+        "variance",
+        "skewness"
+      ],
+      "linear_C": 1.0,
+      "rbf_C": 1.0,
+      "rbf_gamma": 0.5
+    },
+    "bootstrap_resamples": 2000
+  },
+  "hardware": {
+    "platform": "Windows-10-10.0.26200-SP0",
+    "machine": "AMD64",
+    "processor": "AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD",
+    "cpu_count": 12,
+    "python": "3.11.9",
+    "ram_gb": 7.31
+  },
+  "packages": {
+    "numpy": "2.0.1",
+    "scipy": "1.14.0",
+    "pandas": "2.2.2",
+    "scikit-learn": "1.5.1",
+    "cvxpy": "1.9.3",
+    "clarabel": "0.11.1",
+    "matplotlib": "3.9.2"
+  },
+  "git": {
+    "commit": null,
+    "dirty": true
+  },
+  "data": {
+    "raw rows": 1372,
+    "duplicates removed": 24,
+    "train / val / test": "808 / 270 / 270",
+    "features": "variance, skewness, curtosis, entropy",
+    "sha256": "d0539aaed2139ba7a587b3e34fb345ce503ff7d5d33dbf9912d8e195ce425cb9"
+  },
+  "selection": {
+    "linear": [
+      100.0,
+      null
+    ],
+    "rbf": [
+      1000.0,
+      0.01
+    ]
+  },
+  "sweep_runtime_s": 5.831600000034086,
+  "runs": [
+    {
+      "solver": "cvx_primal",
+      "kernel": "linear",
+      "C": 100.0,
+      "status": "optimal",
+      "n_iter": 34,
+      "runtime_s": 0.028644399950280786,
+      "py_heap_peak_mb": 5.490440368652344
+    },
+    {
+      "solver": "cvx_dual",
+      "kernel": "linear",
+      "C": 100.0,
+      "status": "optimal",
+      "n_iter": 22,
+      "runtime_s": 0.0286496999906376,
+      "py_heap_peak_mb": 5.572185516357422
+    },
+    {
+      "solver": "smo",
+      "kernel": "linear",
+      "C": 100.0,
+      "status": "optimal",
+      "n_iter": 9189,
+      "runtime_s": 1.7886239000363275,
+      "py_heap_peak_mb": 14.94940185546875
+    },
+    {
+      "solver": "pegasos",
+      "kernel": "linear",
+      "C": 100.0,
+      "status": "fixed_budget",
+      "n_iter": 40400,
+      "runtime_s": 0.031277400092221797,
+      "py_heap_peak_mb": 5.34027099609375
+    },
+    {
+      "solver": "libsvm",
+      "kernel": "linear",
+      "C": 100.0,
+      "status": "optimal",
+      "n_iter": 9298,
+      "runtime_s": 0.00453090004157275,
+      "py_heap_peak_mb": 5.023324012756348
+    },
+    {
+      "solver": "l1_svm",
+      "kernel": "linear",
+      "C": 100.0,
+      "status": "optimal",
+      "n_iter": 31,
+      "runtime_s": 0.01531069993507117,
+      "py_heap_peak_mb": 0.7799959182739258
+    },
+    {
+      "solver": "cvx_primal",
+      "kernel": "rbf(gamma=0.01)",
+      "C": 1000.0,
+      "status": "optimal",
+      "n_iter": 17,
+      "runtime_s": 0.35235339996870607,
+      "py_heap_peak_mb": 18.776585578918457
+    },
+    {
+      "solver": "cvx_dual",
+      "kernel": "rbf(gamma=0.01)",
+      "C": 1000.0,
+      "status": "optimal",
+      "n_iter": 19,
+      "runtime_s": 0.44300540001131594,
+      "py_heap_peak_mb": 18.7920503616333
+    },
+    {
+      "solver": "smo",
+      "kernel": "rbf(gamma=0.01)",
+      "C": 1000.0,
+      "status": "optimal",
+      "n_iter": 1885,
+      "runtime_s": 0.42143340001348406,
+      "py_heap_peak_mb": 14.955940246582031
+    },
+    {
+      "solver": "pegasos",
+      "kernel": "rbf(gamma=0.01)",
+      "C": 1000.0,
+      "status": "fixed_budget",
+      "n_iter": 40400,
+      "runtime_s": 0.03984209999907762,
+      "py_heap_peak_mb": 14.95596694946289
+    },
+    {
+      "solver": "libsvm",
+      "kernel": "rbf(gamma=0.01)",
+      "C": 1000.0,
+      "status": "optimal",
+      "n_iter": 1635,
+      "runtime_s": 0.003440600004978478,
+      "py_heap_peak_mb": 14.966641426086426
+    }
+  ],
+  "figures": [
+    "figures/separating_hyperplane.png",
+    "figures/rbf_margin_support_vectors.png",
+    "figures/primal_dual_gap_curve.png",
+    "figures/pegasos_vs_exact.png",
+    "figures/sensitivity_linear_C.png",
+    "figures/sensitivity_rbf_C_gamma.png"
+  ]
+}

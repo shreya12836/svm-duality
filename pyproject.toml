@@ -1,0 +1,32 @@
+[project]
+name = "svmdual"
+version = "0.1.0"
+description = "Duality geometry of linear and kernel SVMs on the UCI Banknote Authentication data"
+requires-python = ">=3.11"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+markers = ["integration: end-to-end run on the real dataset (~15 s)"]
+
+[tool.black]
+line-length = 99
+target-version = ["py311"]
+
+[tool.isort]
+profile = "black"
+line_length = 99
+
+[tool.ruff]
+line-length = 99
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "N", "UP", "B", "SIM", "NPY"]
+ignore = ["N803", "N806", "N815"]  # allow math-style names such as X, K, Q
